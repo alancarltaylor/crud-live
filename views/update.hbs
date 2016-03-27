@@ -1,0 +1,38 @@
+<h1>Update This Album</h1>
+
+
+<!-- <h3>Title</h3>
+<i>{{album.name}}</i>
+<h3>Artist</h3>
+<i>{{album.artists}}</i>
+<h3>Genre</h3>
+<i>{{album.genre}}</i>
+<h3>Explicit Material</h3>
+<i>{{album.explicit}}</i> -->
+
+<form method="POST" action="/albums">
+  <fieldset>
+
+    <label>Title</label>
+    <input type="text" name="name" value="{{album.name}}">
+    <br><br>
+
+    <label>Artist</label>
+    <input type="text" name="artists" value="{{album.artists}}">
+    <br><br>
+
+    <label>Genre</label>
+    <select name="genre">
+      {{#genres}}
+        <option value="{{value}}">{{title}}</option>
+      {{/genres}}
+    </select>
+    <br><br>
+
+    <input type="checkbox" name="explicit" value="true">Contains Explicit Lyrics
+    <br><br>
+
+    <input type="submit" value="Update Album">
+    <a href="/albums">Cancel</a>
+  </fieldset>
+</form>

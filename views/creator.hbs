@@ -1,0 +1,29 @@
+<h1>Creator!</h1>
+
+<form method="POST" action="/albums">
+  <fieldset>
+    <legend>Create Album</legend>
+
+    <label>Title</label>
+    <input type="text" name="name">
+    <br><br>
+
+    <label>Artist</label>
+    <input type="text" name="artists">
+    <br><br>
+
+    <label>Genre</label>
+    <select name="genre">
+      {{#genres}}
+        <option value="{{value}}">{{title}}</option>
+      {{/genres}}
+    </select>
+    <br><br>
+
+    <input type="checkbox" name="explicit" value="true">Contains Explicit Lyrics
+    <br><br>
+
+    <input type="submit" value="Create Album">
+    <a href="/albums">Cancel</a>
+  </fieldset>
+</form>
